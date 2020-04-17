@@ -15,13 +15,23 @@ interface RedCards {
   open?: boolean,
 }
 
+interface OrangeCards {
+  id: number;
+}
+
+
+ 
+
 interface IState {
-  mCards: RedCards[];
+  mCards: RedCards[],
+  // clickedCardId: OrangeCards[],
+  clickedCardId: Array<any>,
+  clickedCardCount: number;
 }
 
  
 
-const initialState: IState = {mCards: []};
+const initialState: IState = {mCards: [],clickedCardCount:0,clickedCardId: []};
 
 const shuffleCards = () => {
   let updatedCards = [];
@@ -47,9 +57,8 @@ const reducer: React.Reducer<IState, Actions> = (state, action) => {
       return state ;
     case 'CARD_CLICKED':
       let value = [...state.mCards];
-      console.log('! value[action.index].open',! value[action.index].open)
-      value[action.index].open = ! value[action.index].open;
-      return  {...state,mCards:value};
+      value[action.index].open = true;
+      return  {...state,mCards:value,clickedCardId: [],clickedCardCount:state.clickedCardCount+1};
     default:
       throw new Error();
   }
