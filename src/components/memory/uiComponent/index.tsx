@@ -2,7 +2,7 @@ import React, { useReducer, useEffect } from 'react';
 import '../uiComponent/ui.css';
 import { Images } from '../Images';
 import { DefaultImg } from '../Images';
-// import { Flip } from 'react-awesome-reveal';
+import { Flip } from 'react-awesome-reveal';
 
 type Actions =
   | { type: 'INITIAL_RENDER' }
@@ -90,14 +90,16 @@ const Uirender: React.FC = () => {
     <div className="container">
       {console.log('state', state)}
       {state.mCards && state.mCards.map((eachCard, i) =>
-        <div  >
-          <figure key={eachCard.id} className="figure-block">
+      <Flip key={eachCard.id}>
+        <div>
+          <figure className="figure-block">
             <img className="img-block"
               src={eachCard.open ? eachCard.imgUrl : DefaultImg}
               alt="Memory"
               onClick={() => handleClick(i, eachCard.open || false)} />
           </figure>
         </div>
+      </Flip>
       )}
     </div>
   );
