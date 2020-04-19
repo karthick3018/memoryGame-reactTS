@@ -4,7 +4,7 @@ import MemoryGame from './components';
 function App() {
   return (
     <>
-    A parent component
+    <p>A Memory game for JS programmers </p>
      <MemoryGame/>
     </>
   );

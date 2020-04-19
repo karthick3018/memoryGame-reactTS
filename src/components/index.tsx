@@ -5,7 +5,6 @@ const MemoryGame : React.FC =() => {
   return (
     <>
     <Uirender/>
-    <p>Check render</p>
     </>
   )
 }

@@ -1,5 +1,8 @@
 .container {
-  display: flex
+    display: flex;
+    border: 1px solid;
+    width: 1150px;
+    flex-wrap: wrap;
 }
 .figure-block{
   width: 200px;
