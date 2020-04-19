@@ -88,7 +88,6 @@ const Uirender: React.FC = () => {
 
 
     <div className="container">
-      {console.log('state', state)}
       {state.mCards && state.mCards.map((eachCard, i) =>
       <Flip key={eachCard.id}>
         <div>
