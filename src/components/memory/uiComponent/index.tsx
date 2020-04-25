@@ -1,29 +1,28 @@
-import React, { useReducer, useEffect } from 'react';
-import '../uiComponent/ui.css';
+import React, { useReducer, useEffect, useState } from 'react';
+import { Flip } from 'react-awesome-reveal';
+import ModalComponent from '../resultModal';
 import { Images } from '../Images';
 import { DefaultImg } from '../Images';
-import { Flip } from 'react-awesome-reveal';
+import '../uiComponent/ui.css';
 
 type Actions =
-  | { type: 'INITIAL_RENDER' }
-  | { type: 'CARD_CLICKED', index: number };
+  | { type: 'CARD_CLICKED', index: number }
+  | { type: 'RESTART' }
 
 
-interface RedCards {
+interface CardTypes {
   id: number,
   imgUrl?: string,
   open?: boolean,
 }
 
 interface IState {
-  mCards: RedCards[],
+  mCards: CardTypes[],
   clickedCardId: Array<any>,
   clickedCardCount: number;
+  resultStatus?: boolean
 }
 
-
-
-const initialState: IState = { mCards: [], clickedCardCount: 0, clickedCardId: [] };
 
 const shuffleCards = () => {
   let updatedCards = [];
@@ -38,15 +37,25 @@ const shuffleCards = () => {
   return updatedCards;
 }
 
+const initialState: IState = { mCards: shuffleCards(), clickedCardCount: 0, clickedCardId: [],resultStatus:false };
+
+const checkResult = (cards: Array<CardTypes>) => {
+  let value = true;
+  cards.map(eachCard => {
+    if (eachCard.open === false) {
+      value = false;
+    }
+    return 1;
+  })
+  if (value) {
+    return value
+  }
+
+}
+
 const reducer: React.Reducer<IState, Actions> = (state, action) => {
   switch (action.type) {
-    case 'INITIAL_RENDER':
-      let shuffleResult = [];
-      shuffleResult = shuffleCards();
-      if (shuffleResult) {
-        return { ...state, mCards: state.mCards.concat(shuffleResult) };
-      }
-      return state;
+    
     case 'CARD_CLICKED':
       let value = [...state.mCards];
       value[action.index].open = true;
@@ -59,29 +68,43 @@ const reducer: React.Reducer<IState, Actions> = (state, action) => {
         }
         updatedClickedId.splice(0, 2);
       }
+      let result = checkResult([...state.mCards]);
+
 
       updatedClickedId.push(action.index);
 
-      return { ...state, mCards: value, clickedCardId: updatedClickedId, clickedCardCount: state.clickedCardCount + 1 };
+      return { ...state, mCards: value, clickedCardId: updatedClickedId, clickedCardCount: state.clickedCardCount + 1,resultStatus: result };
+
+      case 'RESTART':
+        return { mCards: shuffleCards(), clickedCardCount: 0, clickedCardId: [],resultStatus:false };
+       
     default:
       throw new Error();
   }
 }
 
-
-
-
-
 const Uirender: React.FC = () => {
   const [state, dispatch] = useReducer<React.Reducer<IState, Actions>>(reducer, initialState);
+  const [isResultOpen ,setIsResultOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    dispatch({ type: 'INITIAL_RENDER' })
-  }, []);
+    if(state.resultStatus){
+      setIsResultOpen(true);
+    }
+  }, [state.resultStatus])
 
   const handleClick = (id: number, isOpen: boolean) => {
     if (!isOpen)
       dispatch({ type: 'CARD_CLICKED', index: id })
+  }
+
+  const handleModalClose = () => {
+   setIsResultOpen(false);
+  }
+
+  const handleRestart = () => {
+    dispatch({type:'RESTART'})
+    handleModalClose();
   }
 
   return (
@@ -89,17 +112,31 @@ const Uirender: React.FC = () => {
 
     <div className="container">
       {state.mCards && state.mCards.map((eachCard, i) =>
-      <Flip key={eachCard.id}>
-        <div>
-          <figure className="figure-block">
-            <img className="img-block"
-              src={eachCard.open ? eachCard.imgUrl : DefaultImg}
-              alt="Memory"
-              onClick={() => handleClick(i, eachCard.open || false)} />
-          </figure>
-        </div>
-      </Flip>
+        <Flip key={eachCard.id}>
+          <div>
+            <figure className="figure-block">
+              <img className="img-block"
+                src={eachCard.open ? eachCard.imgUrl : DefaultImg}
+                alt="Memory"
+                onClick={() => handleClick(i, eachCard.open || false)} />
+            </figure>
+          </div>
+        </Flip>
       )}
+
+      {state.resultStatus &&
+       <ModalComponent
+        isModalOpen = { isResultOpen }
+        title = { 'Result' }
+        onClose = { handleModalClose }
+        renderItems = {
+          <>
+           <h3> Congrats , You Won !</h3>
+           <button onClick = { handleRestart } className='button-class'>Restart</button>
+          </>
+        }
+        />
+      }
     </div>
   );
 }

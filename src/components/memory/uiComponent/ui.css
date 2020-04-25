@@ -27,3 +27,28 @@ transform: translateX(-3px);
  object-position: center;
  border-radius: 15px;
 }
+
+.button-class{
+  padding: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  width: 100px !important;
+  height: 50px !important;
+  font-family: Sans-Serif;
+  text-transform: uppercase;
+  height: auto;
+  width: inherit;
+  text-shadow: 4px 4px 3px rgba(77, 77, 77, 0.5);
+  box-shadow: 14px 14px rgba(77, 77, 77, 0.1);
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.button-class:hover {
+  box-shadow: 14px 14px rgba(77, 77, 77, 0.5);
+}
+
+.button-class:active {
+  transform: translate3d(7px, 7px, 0px);
+  box-shadow: 7px 7px rgba(77, 77, 77, 0.5);
+}
