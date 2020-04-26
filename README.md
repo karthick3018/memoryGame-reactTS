@@ -15,3 +15,5 @@ You will also see any lint errors in the console.
 ### Things done
 
 A React TS application that is used to play the memory game with the help of useReducer 
+
+![Initial Screen](https://github.com/karthick3018/memoryGame-reactTS/blob/master/src/components/memory/Images/initial.png)
