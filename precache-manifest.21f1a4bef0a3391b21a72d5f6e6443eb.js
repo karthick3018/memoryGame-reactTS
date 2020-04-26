@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0f6e7a8ba59435bfed6a573775c748d7",
+    "revision": "f104eacbc96e9ffa692c4e121aa4cd72",
     "url": "/memoryGame-reactTS/index.html"
   },
   {
-    "revision": "f132b0b7cb3be5681335",
-    "url": "/memoryGame-reactTS/static/css/main.3e4d0c73.chunk.css"
+    "revision": "31f3b1fed1ee62f6948a",
+    "url": "/memoryGame-reactTS/static/css/main.4c46424e.chunk.css"
   },
   {
-    "revision": "ca1188acd530143595f5",
-    "url": "/memoryGame-reactTS/static/js/2.7f3b7bef.chunk.js"
+    "revision": "c6befeee6c5c370e2354",
+    "url": "/memoryGame-reactTS/static/js/2.1bec4427.chunk.js"
   },
   {
-    "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/memoryGame-reactTS/static/js/2.7f3b7bef.chunk.js.LICENSE.txt"
+    "revision": "cb4293a028d0175415ddb31dc1aaaefb",
+    "url": "/memoryGame-reactTS/static/js/2.1bec4427.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f132b0b7cb3be5681335",
-    "url": "/memoryGame-reactTS/static/js/main.8a5ec397.chunk.js"
+    "revision": "31f3b1fed1ee62f6948a",
+    "url": "/memoryGame-reactTS/static/js/main.a6217637.chunk.js"
   },
   {
     "revision": "3db669dc7fdd78a20f06",

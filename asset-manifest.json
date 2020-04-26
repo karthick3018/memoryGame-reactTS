@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/memoryGame-reactTS/static/css/main.3e4d0c73.chunk.css",
-    "main.js": "/memoryGame-reactTS/static/js/main.8a5ec397.chunk.js",
-    "main.js.map": "/memoryGame-reactTS/static/js/main.8a5ec397.chunk.js.map",
+    "main.css": "/memoryGame-reactTS/static/css/main.4c46424e.chunk.css",
+    "main.js": "/memoryGame-reactTS/static/js/main.a6217637.chunk.js",
+    "main.js.map": "/memoryGame-reactTS/static/js/main.a6217637.chunk.js.map",
     "runtime-main.js": "/memoryGame-reactTS/static/js/runtime-main.62b99c56.js",
     "runtime-main.js.map": "/memoryGame-reactTS/static/js/runtime-main.62b99c56.js.map",
-    "static/js/2.7f3b7bef.chunk.js": "/memoryGame-reactTS/static/js/2.7f3b7bef.chunk.js",
-    "static/js/2.7f3b7bef.chunk.js.map": "/memoryGame-reactTS/static/js/2.7f3b7bef.chunk.js.map",
+    "static/js/2.1bec4427.chunk.js": "/memoryGame-reactTS/static/js/2.1bec4427.chunk.js",
+    "static/js/2.1bec4427.chunk.js.map": "/memoryGame-reactTS/static/js/2.1bec4427.chunk.js.map",
     "index.html": "/memoryGame-reactTS/index.html",
-    "precache-manifest.d403c5073766ac0d0c4bb587bf696fe2.js": "/memoryGame-reactTS/precache-manifest.d403c5073766ac0d0c4bb587bf696fe2.js",
+    "precache-manifest.21f1a4bef0a3391b21a72d5f6e6443eb.js": "/memoryGame-reactTS/precache-manifest.21f1a4bef0a3391b21a72d5f6e6443eb.js",
     "service-worker.js": "/memoryGame-reactTS/service-worker.js",
-    "static/css/main.3e4d0c73.chunk.css.map": "/memoryGame-reactTS/static/css/main.3e4d0c73.chunk.css.map",
-    "static/js/2.7f3b7bef.chunk.js.LICENSE.txt": "/memoryGame-reactTS/static/js/2.7f3b7bef.chunk.js.LICENSE.txt",
+    "static/css/main.4c46424e.chunk.css.map": "/memoryGame-reactTS/static/css/main.4c46424e.chunk.css.map",
+    "static/js/2.1bec4427.chunk.js.LICENSE.txt": "/memoryGame-reactTS/static/js/2.1bec4427.chunk.js.LICENSE.txt",
     "static/media/default.jpg": "/memoryGame-reactTS/static/media/default.de9c7ed0.jpg",
     "static/media/p1.png": "/memoryGame-reactTS/static/media/p1.0cded3a3.png",
     "static/media/p5.png": "/memoryGame-reactTS/static/media/p5.ed419638.png"
   },
   "entrypoints": [
     "static/js/runtime-main.62b99c56.js",
-    "static/js/2.7f3b7bef.chunk.js",
-    "static/css/main.3e4d0c73.chunk.css",
-    "static/js/main.8a5ec397.chunk.js"
+    "static/js/2.1bec4427.chunk.js",
+    "static/css/main.4c46424e.chunk.css",
+    "static/js/main.a6217637.chunk.js"
   ]
 }
